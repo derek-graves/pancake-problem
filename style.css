@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}  
+
+/* REMOVE LATER */
+body {
+  height: 100vh;
+  width: 100vw;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+/* REMOVE LATER */
+h6 {
+  color: cornflowerblue;
+
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 700;
+  font-size: 36px;
+}
