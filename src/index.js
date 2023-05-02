@@ -17,10 +17,14 @@ const Stack = (order) => {
       order.splice(0, flipBeneath + 1, ...flipped);
     }
   };
+  const movePancake = (from, to) => {
+    const validIndices =
+      from >= 0 && to >= 0 && from < order.length && to < order.length;
+    if (validIndices) {
+      const movingPancake = order.splice(from, 1)[0];
+      order.splice(to, 0, movingPancake);
+    }
+  };
 
-  return { getOrder, addPancake, removePancake, flip };
+  return { getOrder, addPancake, removePancake, flip, movePancake };
 };
-
-const test = Stack([1, 2, 4, 3]);
-test.flip(3);
-console.log(test.getOrder());
