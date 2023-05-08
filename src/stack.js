@@ -1,6 +1,3 @@
-import "./style.css";
-import "./stack-history.js";
-
 const Stack = (order) => {
   const getOrder = () => order;
   const addPancake = () => {
