@@ -1,14 +1,8 @@
 class Stack {
   constructor(order) {
     this.order = order;
-  }
-
-  flip(flipBeneath) {
-    if (flipBeneath >= 0 && flipBeneath < this.order.length) {
-      const flipped = this.order.slice(0, flipBeneath + 1);
-      flipped.reverse();
-      this.order.splice(0, flipBeneath + 1, ...flipped);
-    }
+    // Use shallow copy to avoid reference sharing
+    this.history = [[...this.order]];
   }
 
   get order() {
@@ -16,6 +10,29 @@ class Stack {
   }
   set order(newOrder) {
     this._order = newOrder;
+  }
+
+  get history() {
+    return this._history;
+  }
+  set history(newHistory) {
+    this._history = newHistory;
+  }
+
+  flip(flipBeneath) {
+    if (flipBeneath >= 0 && flipBeneath < this.order.length) {
+      const flipped = this.order.slice(0, flipBeneath + 1);
+      flipped.reverse();
+      this.order.splice(0, flipBeneath + 1, ...flipped);
+      // Use shallow copy to avoid reference sharing
+      this.history.push([...this.order]);
+    }
+  }
+
+  revert(index) {
+    const temp = this.history.slice(0, index + 1);
+    this.order = this.history[index];
+    this.history = temp;
   }
 }
 
@@ -45,38 +62,3 @@ class SandboxStack extends Stack {
 }
 
 export { Stack, SandboxStack };
-/*
-const Stack = (order) => {
-  const getOrder = () => order;
-  const flip = (flipBeneath) => {
-    if (flipBeneath >= 0 && flipBeneath < order.length) {
-      const flipped = order.slice(0, flipBeneath + 1);
-      flipped.reverse();
-      order.splice(0, flipBeneath + 1, ...flipped);
-    }
-  };
-  const addPancake = () => {
-    order.push(order.length + 1);
-  };
-  const removePancake = () => {
-    const largestPancake = Math.max(...order);
-    const temp = order.filter((pancake) => pancake !== largestPancake);
-    order = temp;
-  };
-  const movePancake = (from, to) => {
-    const validIndices =
-      from >= 0 && to >= 0 && from < order.length && to < order.length;
-    if (validIndices) {
-      const movingPancake = order.splice(from, 1)[0];
-      order.splice(to, 0, movingPancake);
-    }
-  };
-  return {
-    getOrder,
-    flip,
-    addPancake,
-    removePancake,
-    movePancake,
-  };
-};
-*/
