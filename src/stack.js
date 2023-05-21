@@ -42,11 +42,15 @@ class SandboxStack extends Stack {
   }
   addPancake() {
     this.order.push(this.order.length + 1);
+    this.history = [];
+    this.history.push([...this.order]);
   }
   removePancake() {
     const largestPancake = Math.max(...this.order);
     const temp = this.order.filter((pancake) => pancake !== largestPancake);
     this.order = temp;
+    this.history = [];
+    this.history.push([...this.order]);
   }
   movePancake(from, to) {
     const validIndices =
@@ -57,6 +61,8 @@ class SandboxStack extends Stack {
     if (validIndices) {
       const movingPancake = this.order.splice(from, 1)[0];
       this.order.splice(to, 0, movingPancake);
+      this.history = [];
+      this.history.push([...this.order]);
     }
   }
 }
