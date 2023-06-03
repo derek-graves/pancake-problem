@@ -4,6 +4,13 @@
   --sub-color: #000000;
 
   --radius: 12px;
+
+  --font: Inter, sans-serif;
+}
+
+@font-face {
+  font-family: Inter;
+  src: url("./fonts/inter.ttf");
 }
 
 * {
@@ -33,6 +40,35 @@ body {
   width: 100%;
 }
 
+.middle {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  padding: 32px 0;
+}
+
+.stack {
+  height: 100%;
+  width: 472px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  gap: 1.5%;
+}
+
+.pancake {
+  background-color: var(--main-color);
+  width: 200px;
+
+  border-radius: 12px;
+  flex: 1;
+}
+
 .bottom {
   display: flex;
   justify-content: center;
@@ -46,6 +82,8 @@ body {
   width: 33vw;
   min-width: 400px; /* Replace with min width of 4 cards  plus padding */
 
+  padding: 12px;
+
   border: 3px solid var(--main-color);
   border-bottom: none;
   border-radius: 12px 12px 0 0;
@@ -53,12 +91,15 @@ body {
 
 #history-label {
   position: absolute;
-  left: 11px;
-  top: -11px;
+  left: 12px;
+  top: -12px;
 
   padding: 0 8px;
 
   background-color: var(--bg-color);
+
+  font-family: var(--font);
+  font-weight: 600;
 }
 
 .history {
@@ -68,8 +109,6 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-
-  padding: 12px;
 
   overflow: auto;
 }
