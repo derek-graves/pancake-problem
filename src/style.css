@@ -13,6 +13,27 @@
   src: url("./fonts/inter.ttf");
 }
 
+@font-face {
+  font-family: "Material Symbols Rounded";
+  font-size: normal;
+  font-weight: 400;
+  src: url("./fonts/material-symbols-rounded.woff2");
+}
+
+.material-symbols-rounded {
+  font-family: "Material Symbols Rounded";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px; /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
