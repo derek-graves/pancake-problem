@@ -45,28 +45,31 @@ body {
 
   display: flex;
   flex-direction: column;
-  justify-content: end;
+  justify-content: center;
   align-items: center;
-  padding: 32px 0;
+  padding: 48px;
 }
 
 .stack {
   height: 100%;
-  width: 472px;
+  width: 100%;
+  max-width: 640px;
 
   display: flex;
   flex-direction: column;
   justify-content: end;
   align-items: center;
-  gap: 1.5%;
+  gap: 8px;
 }
 
 .pancake {
   background-color: var(--main-color);
+
   width: 200px;
+  max-height: 48px;
+  flex: 1;
 
   border-radius: 12px;
-  flex: 1;
 }
 
 .bottom {
@@ -114,23 +117,28 @@ body {
 }
 
 .history-card {
-  width: 80px;
-  height: 80px;
+  width: 96px;
+  height: 96px;
 
   background-color: var(--main-color);
   border-radius: var(--radius);
 
+  padding: 6px;
+
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: end;
   align-items: center;
   gap: 2px;
 }
 
 .card-pancake {
   background-color: var(--sub-color);
-  height: 4px;
-  border-radius: var(--radius);
+
+  max-height: 8px;
+  flex: 1;
+
+  border-radius: 2px;
 }
 
 #card-size-1 {
@@ -138,15 +146,15 @@ body {
 }
 
 #card-size-2 {
-  width: 30%;
+  width: 50%;
 }
 
 #card-size-3 {
-  width: 35%;
+  width: 75%;
 }
 
 #card-size-4 {
-  width: 40%;
+  width: 100%;
 }
 
 /* USED FOR "Under construction..." PAGE.
