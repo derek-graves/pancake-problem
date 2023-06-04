@@ -95,6 +95,14 @@ body {
   border-radius: 12px;
 }
 
+.pancake:hover {
+  background-color: var(--tertiary-color);
+}
+
+.pancake:active {
+  background-color: var(--primary-color);
+}
+
 .bottom {
   display: flex;
   justify-content: center;
