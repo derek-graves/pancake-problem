@@ -63,6 +63,31 @@ body {
   width: 100%;
 }
 
+.header {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+}
+
+.logo {
+  font-family: var(--font);
+  font-size: 44px;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.header-button {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-icon {
+  color: var(--primary-color);
+}
+
 .middle {
   width: 100%;
 
