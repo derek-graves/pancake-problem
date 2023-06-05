@@ -159,10 +159,26 @@ body {
 
   border-radius: var(--primary-radius);
   padding: 6px;
+  padding-top: 20px; /* Leave room for pseudo-element label */
 
   background-color: var(--primary-color);
 
   cursor: pointer;
+
+  position: relative;
+}
+
+.history-card::after {
+  position: absolute;
+  content: attr(data-history-index);
+
+  font-family: var(--font);
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--secondary-color);
+
+  top: 2px;
+  left: 6px;
 }
 
 .history-card:hover {
