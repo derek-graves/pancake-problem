@@ -91,8 +91,6 @@ body {
   align-self: center;
   position: relative;
 
-  width: 720px;
-
   border: 3px solid var(--primary-color);
   border-radius: var(--primary-radius);
 
@@ -101,7 +99,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 12px;
+  gap: 72px;
 }
 
 .controls-label {
@@ -131,9 +129,19 @@ body {
   color: var(--primary-color);
 }
 
+.control-icon {
+  font-size: 20px;
+}
+
 .control-text {
   font-family: var(--font);
   font-size: 12px;
+}
+
+@media (max-width: 900px) {
+  .control-text {
+    display: none;
+  }
 }
 
 #interact-mode-flip .control-icon {
