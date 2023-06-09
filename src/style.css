@@ -252,7 +252,7 @@ body {
   font-weight: 600;
 }
 
-.history {
+#history {
   height: 100%;
   width: 100%;
 
@@ -314,22 +314,18 @@ body {
   border-radius: 2px;
 }
 
-#card-size-1,
 #size-1 {
   width: 25%;
 }
 
-#card-size-2,
 #size-2 {
   width: 50%;
 }
 
-#card-size-3,
 #size-3 {
   width: 75%;
 }
 
-#card-size-4,
 #size-4 {
   width: 100%;
 }
