@@ -189,7 +189,7 @@ body {
   align-items: center;
 }
 
-.stack {
+#stack {
   height: 100%;
   width: 50%;
   max-width: 640px;
