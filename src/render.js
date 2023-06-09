@@ -7,6 +7,9 @@ const renderStack = (stack) => {
     const newPancake = document.createElement("div");
     newPancake.classList.add("pancake");
 
+    // set data attribute to connect stack and corresponding DOM elements
+    newPancake.dataset.stackIndex = pancake - 1;
+
     const widthPercentage = (pancake / stackArray.length) * 100;
     newPancake.style.width = `${widthPercentage}%`;
 
