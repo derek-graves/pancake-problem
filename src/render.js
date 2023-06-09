@@ -1,4 +1,4 @@
-const updateStack = (stack) => {
+const renderStack = (stack) => {
   const stackDOM = document.getElementById("stack");
   stackDOM.innerHTML = "";
 
@@ -14,7 +14,7 @@ const updateStack = (stack) => {
   });
 };
 
-const updateHistory = (stack) => {
+const renderHistory = (stack) => {
   const historyDOM = document.getElementById("history");
   historyDOM.innerHTML = "";
 
@@ -43,4 +43,4 @@ const updateHistory = (stack) => {
   }
 };
 
-export { updateStack, updateHistory };
+export { renderStack, renderHistory };
