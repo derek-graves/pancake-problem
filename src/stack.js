@@ -19,7 +19,8 @@ class Stack {
     this._history = newHistory;
   }
 
-  flip(flipBeneath) {
+  flip(index) {
+    const flipBeneath = parseInt(index);
     if (flipBeneath >= 0 && flipBeneath < this.order.length) {
       const flipped = this.order.slice(0, flipBeneath + 1);
       flipped.reverse();

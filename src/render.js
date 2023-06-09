@@ -3,18 +3,21 @@ const renderStack = (stack) => {
   stackDOM.innerHTML = "";
 
   const stackArray = stack.order;
-  stackArray.forEach((pancake) => {
+
+  // Traditional for loop used because each pancake's index isn't
+  // necessarily the same as its value
+  for (let i = 0; i < stackArray.length; i++) {
     const newPancake = document.createElement("div");
     newPancake.classList.add("pancake");
 
     // set data attribute to connect stack and corresponding DOM elements
-    newPancake.dataset.stackIndex = pancake - 1;
+    newPancake.dataset.stackIndex = i;
 
-    const widthPercentage = (pancake / stackArray.length) * 100;
+    const widthPercentage = (stackArray[i] / stackArray.length) * 100;
     newPancake.style.width = `${widthPercentage}%`;
 
     stackDOM.append(newPancake);
-  });
+  }
 };
 
 const renderHistory = (stack) => {
