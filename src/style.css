@@ -312,6 +312,8 @@ body {
   flex: 1;
 
   border-radius: 2px;
+
+  pointer-events: none;
 }
 
 #size-1 {
