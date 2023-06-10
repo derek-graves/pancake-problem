@@ -31,8 +31,10 @@ class Stack {
   }
 
   revert(index) {
-    const temp = this.history.slice(0, index + 1);
-    this.order = this.history[index];
+    const revertTo = parseInt(index);
+    const temp = this.history.slice(0, revertTo + 1);
+    // Use shallow copy to avoid reference sharing
+    this.order = [...this.history[revertTo]];
     this.history = temp;
   }
 }
