@@ -32,7 +32,7 @@ const renderHistory = (stack) => {
     const newHistoryCard = document.createElement("div");
     newHistoryCard.classList.add("history-card");
 
-    newHistoryCard.dataset.historyIndex = i + 1;
+    newHistoryCard.dataset.historyIndex = i;
 
     const currentHistoryStack = historyArray[i];
     currentHistoryStack.forEach((pancake) => {
