@@ -10,12 +10,12 @@ const renderStack = (stack) => {
     const newPancake = document.createElement("div");
     newPancake.classList.add("pancake");
 
+    const widthPercentage = (stackArray[i] / stackArray.length) * 100;
+    newPancake.style.width = `${widthPercentage}%`;
+
     // set data attributes to connect stack and corresponding DOM elements
     newPancake.dataset.stackIndex = i;
     newPancake.dataset.value = stackArray[i];
-
-    const widthPercentage = (stackArray[i] / stackArray.length) * 100;
-    newPancake.style.width = `${widthPercentage}%`;
 
     stackDOM.append(newPancake);
   }
