@@ -3,7 +3,7 @@
   --primary-color: #d9d9d9;
   --secondary-color: #000000;
   --tertiary-color: #b9b9b9;
-  /* --quaternary-color: #ab7728; */
+  --quaternary-color: #ab7728;
   --primary-radius: 12px;
   --font: Inter, sans-serif;
 
@@ -151,6 +151,10 @@ body {
   align-items: center;
 
   color: var(--primary-color);
+}
+
+.single-control-enabled {
+  color: var(--quaternary-color);
 }
 
 .control-icon {
