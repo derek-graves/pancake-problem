@@ -4,10 +4,14 @@
   --secondary-color: #000000;
   --tertiary-color: #b9b9b9;
   /* --quaternary-color: #ab7728; */
-
   --primary-radius: 12px;
-
   --font: Inter, sans-serif;
+
+  /* Stack view variables */
+  --pancake-opacity: 1;
+  --value-opacity: 1;
+  --value-color: var(--secondary-color);
+  --value-color-hover: var(--secondary-color);
 }
 
 @font-face {
@@ -205,19 +209,17 @@ body {
 
 .pancake {
   position: relative;
-
   max-height: 48px;
   flex: 1;
 
   background-color: rgba(0, 0, 0, 0);
-
   border-radius: var(--primary-radius);
 
   cursor: pointer;
 }
 
 .pancake::before {
-  opacity: 1;
+  opacity: var(--pancake-opacity);
   position: absolute;
   width: 100%;
   height: 100%;
@@ -229,15 +231,17 @@ body {
 }
 
 .pancake:hover::before {
+  opacity: var(--pancake-opacity);
   background-color: var(--tertiary-color);
 }
 
 .pancake:active::before {
+  opacity: var(--pancake-opacity);
   background-color: var(--primary-color);
 }
 
 .pancake::after {
-  opacity: 1;
+  opacity: var(--value-opacity);
   position: absolute;
   top: 50%;
   left: 50%;
@@ -245,21 +249,21 @@ body {
 
   content: attr(data-value);
 
-  color: var(--secondary-color);
+  color: var(--value-color);
   font-family: var(--font);
   font-weight: bold;
   font-size: 2rem;
 }
 
-/*
 .pancake:hover::after {
-  color: var(--secondary-color);
+  opacity: var(--value-opacity);
+  color: var(--value-color-hover);
 }
 
 .pancake:active::after {
-  color: var(--secondary-color);
+  opacity: var(--value-opacity);
+  color: var(--value-color);
 }
-*/
 
 #history-container {
   position: relative;
