@@ -355,22 +355,6 @@ body {
   pointer-events: none;
 }
 
-#size-1 {
-  width: 25%;
-}
-
-#size-2 {
-  width: 50%;
-}
-
-#size-3 {
-  width: 75%;
-}
-
-#size-4 {
-  width: 100%;
-}
-
 .bottom {
   height: 0;
 }
