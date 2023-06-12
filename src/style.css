@@ -229,7 +229,6 @@ body {
 }
 
 .pancake::before {
-  /* opacity: var(--pancake-opacity); */
   position: absolute;
   width: 100%;
   height: 100%;
@@ -241,18 +240,15 @@ body {
 }
 
 .pancake:hover::before {
-  /* opacity: var(--pancake-opacity); */
   background-color: var(--tertiary-color);
 }
 
 .pancake:active::before {
-  /* opacity: var(--pancake-opacity); */
   background-color: var(--primary-color);
 }
 
 .pancake::after {
   visibility: var(--value-visibility);
-  /* opacity: var(--value-opacity); */
   position: absolute;
   top: 50%;
   left: 50%;
@@ -269,13 +265,11 @@ body {
 
 .pancake:hover::after {
   visibility: var(--value-visibility);
-  /* opacity: var(--value-opacity); */
   color: var(--value-color-hover);
 }
 
 .pancake:active::after {
   visibility: var(--value-visibility);
-  /* opacity: var(--value-opacity); */
   color: var(--value-color);
 }
 
