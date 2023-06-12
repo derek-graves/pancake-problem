@@ -8,10 +8,6 @@
   --font: Inter, sans-serif;
 
   /* Stack view variables */
-  /*
-  --pancake-opacity: 1;
-  --value-opacity: 1;
-  */
   --pancake-visibility: visible;
   --value-visibility: visible;
   --value-color: var(--secondary-color);
