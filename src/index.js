@@ -3,6 +3,7 @@ import { Stack, SandboxStack } from "./stack";
 import { renderStack, renderHistory } from "./render";
 import { clickHandlerStack, clickHandlerHistory } from "./stack-handlers";
 import changeView from "./view-controls";
+import changeInteractMode from "./interact-controls";
 
 // create default stack
 const defaultOrder = [6, 5, 3, 2, 4, 1];
@@ -37,6 +38,17 @@ viewBoth.addEventListener("click", (event) => {
   changeView(event);
   renderStack(stack);
   renderHistory(stack);
+});
+
+// add event handlers to interact elements
+const interactModeFlip = document.getElementById("interact-mode-flip");
+interactModeFlip.addEventListener("click", (event) => {
+  changeInteractMode(event);
+});
+
+const interactModeDrag = document.getElementById("interact-mode-drag");
+interactModeDrag.addEventListener("click", (event) => {
+  changeInteractMode(event);
 });
 
 // render default stack and history on page load
