@@ -17,11 +17,17 @@ const changeView = (event) => {
 
   // adjust custom properties to fit selected view
   if (selectedView.id === "view-pancakes") {
-    document.documentElement.style.setProperty("--pancake-opacity", "1");
-    document.documentElement.style.setProperty("--value-opacity", "0");
+    document.documentElement.style.setProperty(
+      "--pancake-visibility",
+      "visible"
+    );
+    document.documentElement.style.setProperty("--value-visibility", "hidden");
   } else if (selectedView.id === "view-numbers") {
-    document.documentElement.style.setProperty("--pancake-opacity", "0");
-    document.documentElement.style.setProperty("--value-opacity", "1");
+    document.documentElement.style.setProperty(
+      "--pancake-visibility",
+      "hidden"
+    );
+    document.documentElement.style.setProperty("--value-visibility", "visible");
     document.documentElement.style.setProperty(
       "--value-color",
       "var(--primary-color)"
@@ -31,8 +37,11 @@ const changeView = (event) => {
       "var(--tertiary-color)"
     );
   } else if (selectedView.id === "view-both") {
-    document.documentElement.style.setProperty("--pancake-opacity", "1");
-    document.documentElement.style.setProperty("--value-opacity", "1");
+    document.documentElement.style.setProperty(
+      "--pancake-visibility",
+      "visible"
+    );
+    document.documentElement.style.setProperty("--value-visibility", "visible");
     document.documentElement.style.setProperty(
       "--value-color",
       "var(--secondary-color)"
