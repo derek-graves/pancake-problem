@@ -86,6 +86,7 @@ body {
 
 .header-icon {
   color: var(--primary-color);
+  transition: color 0.125s;
 }
 
 .header-icon:hover {
@@ -151,6 +152,8 @@ body {
   align-items: center;
 
   color: var(--primary-color);
+
+  transition: color 0.125s;
 }
 
 .single-control-enabled {
@@ -233,6 +236,8 @@ body {
 
   border-radius: var(--primary-radius);
   background-color: var(--primary-color);
+
+  transition: background-color 0.125s;
 }
 
 .pancake:hover::before {
@@ -257,6 +262,8 @@ body {
   font-family: var(--font);
   font-weight: bold;
   font-size: 2rem;
+
+  transition: color 0.125s;
 }
 
 .pancake:hover::after {
@@ -329,6 +336,8 @@ body {
   cursor: pointer;
 
   position: relative;
+
+  transition: background-color 0.125s;
 }
 
 .history-card::after {
