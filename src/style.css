@@ -225,6 +225,8 @@ body {
   border-radius: var(--primary-radius);
 
   cursor: pointer;
+
+  transition: transform 0.25s ease;
 }
 
 .pancake::before {
