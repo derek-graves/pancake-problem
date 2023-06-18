@@ -2,13 +2,12 @@ import "./style.css";
 import { Stack, SandboxStack } from "./stack";
 import { renderStack, renderHistory } from "./render";
 import { clickHandlerStack, clickHandlerHistory } from "./stack-handlers";
-import changeView from "./view-controls";
 import changeInteractMode from "./interact-controls";
+import addViewListeners from "./view-controls";
 
-// create default stack
 const defaultOrder = [6, 5, 3, 2, 4, 1];
-//const stack = new Stack(defaultOrder);
-const stack = new SandboxStack(defaultOrder);
+const stack = new Stack(defaultOrder);
+let dragModeEnabled = false;
 
 // add stack-handlers to stack and history elements
 const stackDiv = document.getElementById("stack");
@@ -19,6 +18,9 @@ historyDiv.addEventListener("click", (event) =>
   clickHandlerHistory(event, stack)
 );
 
+addViewListeners(stack);
+
+/* 
 // add event-handlers to view elements
 const viewPancakes = document.getElementById("view-pancakes");
 viewPancakes.addEventListener("click", (event) => {
@@ -40,6 +42,7 @@ viewBoth.addEventListener("click", (event) => {
   renderStack(stack);
   renderHistory(stack);
 });
+*/
 
 // add event handlers to interact elements
 const interactModeFlip = document.getElementById("interact-mode-flip");
@@ -56,16 +59,12 @@ interactModeDrag.addEventListener("click", (event) => {
 renderStack(stack);
 renderHistory(stack);
 
-//////////////////////////////////////////////////////////
-// let draggedElementIndex = "";
-
 const dragStart = (event) => {
   const target = event.target;
   if (target && target.classList.contains("pancake")) {
     event.dataTransfer.effectAllowed = "move";
     event.dataTransfer.dropEffect = "move";
     event.dataTransfer.setData("text/plain", target.dataset.stackIndex);
-    // draggedElementIndex = target.dataset.stackIndex;
 
     target.style.opacity = 0.1;
   }
@@ -82,30 +81,6 @@ const dragEnd = (event) => {
 
 const dragOver = (event) => {
   event.preventDefault();
-  /*
-  const overIndex = document.elementFromPoint(event.clientX, event.clientY)
-    .dataset.stackIndex;
-  if (overIndex === draggedElementIndex) {
-    return;
-  }
-  if (overIndex) {
-    const pancakes = [...document.getElementById("stack").children];
-    const moveUp = pancakes.filter(
-      (pancake) => pancake.dataset.stackIndex <= overIndex
-    );
-    const moveDown = pancakes.filter(
-      (pancake) => pancake.dataset.stackIndex >= overIndex
-    );
-    const height = pancakes[0].offsetHeight;
-    moveUp.forEach(
-      (element) =>
-        (element.style.transform = `translateY(-${height / 2 + 4}px)`)
-    );
-    moveDown.forEach(
-      (element) => (element.style.transform = `translateY(${height / 2 + 4}px)`)
-    );
-  }
-  */
 };
 
 const drop = (event) => {
@@ -138,3 +113,34 @@ stackDiv.addEventListener("dragstart", dragStart);
 stackDiv.addEventListener("dragend", dragEnd);
 stackDiv.addEventListener("dragover", dragOver);
 stackDiv.addEventListener("drop", drop);
+
+/* Foundation for dragover transitions
+
+  const overIndex = document.elementFromPoint(event.clientX, event.clientY)
+    .dataset.stackIndex;
+  if (overIndex) {
+    const pancakes = [...document.getElementById("stack").children];
+    const moveUp = pancakes.filter(
+      (pancake) => pancake.dataset.stackIndex <= overIndex
+    );
+    const moveDown = pancakes.filter(
+      (pancake) => pancake.dataset.stackIndex >= overIndex
+    );
+    const height = pancakes[0].offsetHeight;
+    moveUp.forEach(
+      (element) =>
+        (element.style.transform = `translateY(-${height / 2 + 4}px)`)
+    );
+    moveDown.forEach(
+      (element) => (element.style.transform = `translateY(${height / 2 + 4}px)`)
+    );
+  }
+  */
+
+const fullStack = (function () {
+  const init = {
+    stack: new Stack(defaultOrder),
+    interactMode: "flip",
+  };
+  return Object.seal(init);
+})();

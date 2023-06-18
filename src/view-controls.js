@@ -1,9 +1,11 @@
+import { renderStackAndHistory } from "./render";
+
 function _getOtherSiblings(element, parent) {
   const children = [...parent.children];
   return children.filter((child) => child !== element);
 }
 
-const changeView = (event) => {
+const _changeView = (event) => {
   const selectedView = event.currentTarget;
 
   // toggle enabled class on
@@ -55,4 +57,14 @@ const changeView = (event) => {
   }
 };
 
-export default changeView;
+const addViewListeners = (stack) => {
+  const views = [...document.getElementById("view").children];
+  views.forEach((view) => {
+    view.addEventListener("click", (event) => {
+      _changeView(event);
+      renderStackAndHistory(stack);
+    });
+  });
+};
+
+export default addViewListeners;
