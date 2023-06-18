@@ -57,12 +57,12 @@ const _changeView = (event) => {
   }
 };
 
-const addViewListeners = (stack, dragEnabled) => {
+const addViewListeners = (stack) => {
   const views = [...document.getElementById("view").children];
   views.forEach((view) => {
     view.addEventListener("click", (event) => {
       _changeView(event);
-      renderStackAndHistory(stack, dragEnabled);
+      renderStackAndHistory(stack);
     });
   });
 };

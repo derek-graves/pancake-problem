@@ -6,7 +6,7 @@ import addViewListeners from "./view-controls";
 import addInteractModeListeners from "./interact-mode-controls";
 
 const defaultOrder = [6, 5, 3, 2, 4, 1];
-const stack = new Stack(defaultOrder);
+const stack = new SandboxStack(defaultOrder);
 let dragModeEnabled = false;
 
 // add stack-handlers to stack and history elements
@@ -19,7 +19,7 @@ historyDiv.addEventListener("click", (event) =>
 );
 
 addViewListeners(stack, dragModeEnabled);
-addInteractModeListeners();
+addInteractModeListeners(dragModeEnabled);
 
 // render default stack and history on page load
 renderStack(stack);

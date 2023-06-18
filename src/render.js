@@ -1,6 +1,6 @@
 import { SandboxStack } from "./stack";
 
-const renderStack = (stack, draggable) => {
+const renderStack = (stack) => {
   const stackDOM = document.getElementById("stack");
   stackDOM.innerHTML = "";
 
@@ -20,6 +20,9 @@ const renderStack = (stack, draggable) => {
     newPancake.dataset.value = stackArray[i];
 
     // make pancake draggable only if drag mode enabled on SandboxStack
+    const dragModeDiv = document.getElementById("interact-mode-drag");
+    const draggable = dragModeDiv.classList.contains("single-control-enabled");
+    console.log(draggable);
     if (draggable && stack instanceof SandboxStack) {
       newPancake.setAttribute("draggable", true);
     }
@@ -57,8 +60,8 @@ const renderHistory = (stack) => {
   }
 };
 
-const renderStackAndHistory = (stack, draggable) => {
-  renderStack(stack, draggable);
+const renderStackAndHistory = (stack) => {
+  renderStack(stack);
   renderHistory(stack);
 };
 
