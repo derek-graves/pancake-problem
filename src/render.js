@@ -57,4 +57,9 @@ const renderHistory = (stack) => {
   }
 };
 
-export { renderStack, renderHistory };
+const renderStackAndHistory = (stack, draggable) => {
+  renderStack(stack, draggable);
+  renderHistory(stack);
+};
+
+export { renderStack, renderHistory, renderStackAndHistory };
