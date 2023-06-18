@@ -1,4 +1,6 @@
-const renderStack = (stack) => {
+import { SandboxStack } from "./stack";
+
+const renderStack = (stack, draggable) => {
   const stackDOM = document.getElementById("stack");
   stackDOM.innerHTML = "";
 
@@ -16,6 +18,11 @@ const renderStack = (stack) => {
     // set data attributes to connect stack and corresponding DOM elements
     newPancake.dataset.stackIndex = i;
     newPancake.dataset.value = stackArray[i];
+
+    // make pancake draggable only if drag mode enabled on SandboxStack
+    if (draggable && stack instanceof SandboxStack) {
+      newPancake.setAttribute("draggable", true);
+    }
 
     stackDOM.append(newPancake);
   }
