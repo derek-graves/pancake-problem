@@ -3,7 +3,7 @@ function _getOtherSiblings(element, parent) {
   return children.filter((child) => child !== element);
 }
 
-const changeInteractMode = (event) => {
+const _changeInteractMode = (event) => {
   const selectedView = event.currentTarget;
 
   // toggle enabled class on
@@ -16,4 +16,13 @@ const changeInteractMode = (event) => {
   });
 };
 
-export default changeInteractMode;
+const addInteractModeListeners = () => {
+  const interactModes = [...document.getElementById("interact-mode").children];
+  interactModes.forEach((mode) => {
+    mode.addEventListener("click", (event) => {
+      _changeInteractMode(event);
+    });
+  });
+};
+
+export default addInteractModeListeners;

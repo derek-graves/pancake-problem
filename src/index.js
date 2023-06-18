@@ -2,8 +2,8 @@ import "./style.css";
 import { Stack, SandboxStack } from "./stack";
 import { renderStack, renderHistory } from "./render";
 import { clickHandlerStack, clickHandlerHistory } from "./stack-handlers";
-import changeInteractMode from "./interact-controls";
 import addViewListeners from "./view-controls";
+import addInteractModeListeners from "./interact-mode-controls";
 
 const defaultOrder = [6, 5, 3, 2, 4, 1];
 const stack = new Stack(defaultOrder);
@@ -18,42 +18,8 @@ historyDiv.addEventListener("click", (event) =>
   clickHandlerHistory(event, stack)
 );
 
-addViewListeners(stack);
-
-/* 
-// add event-handlers to view elements
-const viewPancakes = document.getElementById("view-pancakes");
-viewPancakes.addEventListener("click", (event) => {
-  changeView(event);
-  renderStack(stack);
-  renderHistory(stack);
-});
-
-const viewNumbers = document.getElementById("view-numbers");
-viewNumbers.addEventListener("click", (event) => {
-  changeView(event);
-  renderStack(stack);
-  renderHistory(stack);
-});
-
-const viewBoth = document.getElementById("view-both");
-viewBoth.addEventListener("click", (event) => {
-  changeView(event);
-  renderStack(stack);
-  renderHistory(stack);
-});
-*/
-
-// add event handlers to interact elements
-const interactModeFlip = document.getElementById("interact-mode-flip");
-interactModeFlip.addEventListener("click", (event) => {
-  changeInteractMode(event);
-});
-
-const interactModeDrag = document.getElementById("interact-mode-drag");
-interactModeDrag.addEventListener("click", (event) => {
-  changeInteractMode(event);
-});
+addViewListeners(stack, dragModeEnabled);
+addInteractModeListeners();
 
 // render default stack and history on page load
 renderStack(stack);
