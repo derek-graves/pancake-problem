@@ -1,8 +1,9 @@
 class Stack {
   constructor(order) {
     this.order = order;
-    // Use shallow copy to avoid reference sharing
-    this.history = [[...this.order]];
+    // Use shallow copies to avoid reference sharing
+    this.history = [[...order]];
+    this.default = [...order];
   }
 
   get order() {
@@ -36,6 +37,10 @@ class Stack {
     // Use shallow copy to avoid reference sharing
     this.order = [...this.history[revertTo]];
     this.history = temp;
+  }
+
+  reset() {
+    this.order = [...this.default];
   }
 }
 
