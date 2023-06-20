@@ -41,6 +41,7 @@ class Stack {
 
   reset() {
     this.order = [...this.default];
+    this.history = [[...this.default]];
   }
 }
 
