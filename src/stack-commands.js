@@ -44,3 +44,35 @@ class ResetCommand extends PancakeStackCommand {
     this.pancakeStack.reset();
   }
 }
+
+class AddPancakeCommand extends PancakeStackCommand {
+  constructor(pancakeStack) {
+    super(pancakeStack);
+  }
+
+  execute() {
+    this.pancakeStack.addPancake();
+  }
+}
+
+class RemovePancakeCommand extends PancakeStackCommand {
+  constructor(pancakeStack) {
+    super(pancakeStack);
+  }
+
+  execute() {
+    this.pancakeStack.removePancake();
+  }
+}
+
+class DragPancakeCommand extends PancakeStackCommand {
+  constructor(pancakeStack, from, to) {
+    super(pancakeStack);
+    this.dragFrom = from;
+    this.dragTo = to;
+  }
+
+  execute() {
+    this.pancakeStack.movePancake(this.dragFrom, this.dragTo);
+  }
+}
