@@ -12,3 +12,35 @@ class PancakeStackCommand {
     throw new Error("Method 'execute()' must be implemented");
   }
 }
+
+class FlipCommand extends PancakeStackCommand {
+  constructor(pancakeStack, index) {
+    super(pancakeStack);
+    this.index = parseInt(index);
+  }
+
+  execute() {
+    this.pancakeStack.flip(this.index);
+  }
+}
+
+class RevertFlipsCommand extends PancakeStackCommand {
+  constructor(pancakeStack, index) {
+    super(pancakeStack);
+    this.index = parseInt(index);
+  }
+
+  execute() {
+    this.pancakeStack.revert(this.index);
+  }
+}
+
+class ResetCommand extends PancakeStackCommand {
+  constructor(pancakeStack) {
+    super(pancakeStack);
+  }
+
+  execute() {
+    this.pancakeStack.reset();
+  }
+}
