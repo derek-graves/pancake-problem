@@ -21,4 +21,19 @@ class PancakeStackInvoker {
       concreteCommand.execute();
     }
   }
+
+  undo() {
+    if (this.position > 0) {
+      // execute reset command
+      // execute all commands up to position - 1
+      position -= 1;
+    }
+  }
+
+  redo() {
+    if (this.position < this.commandsHistory.length - 1) {
+      this.position += 1;
+      this.commandsHistory[this.position].execute();
+    }
+  }
 }
