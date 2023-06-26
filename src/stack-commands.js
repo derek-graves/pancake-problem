@@ -76,3 +76,14 @@ class DragPancakeCommand extends PancakeStackCommand {
     this.pancakeStack.movePancake(this.dragFrom, this.dragTo);
   }
 }
+
+const pancakeStackCommands = {
+  FLIP: FlipCommand,
+  REVERT: RevertFlipsCommand,
+  RESET: ResetCommand,
+  ADD: AddPancakeCommand,
+  REMOVE: RemovePancakeCommand,
+  DRAG: DragPancakeCommand,
+};
+
+export default pancakeStackCommands;
