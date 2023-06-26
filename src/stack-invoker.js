@@ -37,3 +37,5 @@ class PancakeStackInvoker {
     }
   }
 }
+
+export default PancakeStackInvoker;
