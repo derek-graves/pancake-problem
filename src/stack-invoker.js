@@ -25,8 +25,17 @@ class PancakeStackInvoker {
   undo() {
     if (this.position > 0) {
       // execute reset command
+      const tempReset = new this.pancakeStackCommands["RESET"](
+        this.pancakeStack
+      );
+      tempReset.execute();
+
       // execute all commands up to position - 1
-      position -= 1;
+      for (let i = 0; i < this.position - 1; i++) {
+        this.commandsHistory[i].execute();
+      }
+
+      this.position -= 1;
     }
   }
 
