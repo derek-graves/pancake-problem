@@ -6,18 +6,12 @@ class Stack {
     this.default = [...order];
   }
 
-  get order() {
-    return this._order;
-  }
-  set order(newOrder) {
-    this._order = newOrder;
+  getOrder() {
+    return this.order;
   }
 
-  get history() {
-    return this._history;
-  }
-  set history(newHistory) {
-    this._history = newHistory;
+  getHistory() {
+    return this.history;
   }
 
   flip(index) {

@@ -4,7 +4,7 @@ const renderStack = (stack) => {
   const stackDOM = document.getElementById("stack");
   stackDOM.innerHTML = "";
 
-  const stackArray = stack.order;
+  const stackArray = stack.getOrder();
 
   // Traditional for loop used because each pancake's index isn't
   // necessarily the same as its value
@@ -35,7 +35,7 @@ const renderHistory = (stack) => {
   const historyDOM = document.getElementById("history");
   historyDOM.innerHTML = "";
 
-  const historyArray = stack.history;
+  const historyArray = stack.getHistory();
   // Traditional for loop used because each card's history-index data
   // attribute comes from the index of the snapsnot associated with
   // the card.
