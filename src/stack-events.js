@@ -34,7 +34,7 @@ const dragOver = (event) => {
   event.preventDefault();
 };
 
-const drop = (event, stackObject) => {
+const dropEvent = (event, manager, stackObject) => {
   event.preventDefault();
   // validate target
   if (!event.target.dataset.stackIndex) {
@@ -52,7 +52,7 @@ const drop = (event, stackObject) => {
     stackDiv.replaceChild(dragTarget, dropTarget);
     dragTarget.after(clone);
   }
-  stackObject.movePancake(draggedIndex, droppedIndex);
+  manager.executeCommand("DRAG", [draggedIndex, droppedIndex]);
   renderStackAndHistory(stackObject);
 };
 
@@ -63,13 +63,13 @@ const addFlipListeners = (manager, stackObject) => {
   );
 };
 
-const addDragListeners = (stackObject) => {
+const addDragListeners = (manager, stackObject) => {
   const stackDiv = document.getElementById("stack");
   stackDiv.addEventListener("dragstart", dragStart);
   stackDiv.addEventListener("dragend", dragEnd);
   stackDiv.addEventListener("dragover", dragOver);
   stackDiv.addEventListener("drop", (event) => {
-    drop(event, stackObject);
+    dropEvent(event, manager, stackObject);
   });
 };
 
