@@ -1,19 +1,19 @@
 import { renderStackAndHistory } from "./render";
 
-const clickHandlerHistory = (event, stackObject) => {
+const clickHandlerHistory = (event, manager, stackObject) => {
   const selectedHistoryCard = event.target.dataset.historyIndex;
 
   // only run when history card is clicked
   if (!selectedHistoryCard) return;
 
-  stackObject.revert(selectedHistoryCard);
+  manager.executeCommand("REVERT", [selectedHistoryCard]);
   renderStackAndHistory(stackObject);
 };
 
-const addHistoryListener = (stackObject) => {
+const addHistoryListener = (manager, stackObject) => {
   const historyDiv = document.getElementById("history");
   historyDiv.addEventListener("click", (event) =>
-    clickHandlerHistory(event, stackObject)
+    clickHandlerHistory(event, manager, stackObject)
   );
 };
 
