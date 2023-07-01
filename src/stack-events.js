@@ -1,6 +1,6 @@
 import { renderStackAndHistory } from "./render";
 
-const flipEvent = (event, stackObject) => {
+const flipEvent = (event, manager, stackObject) => {
   const selectedPancake = event.target.dataset.stackIndex;
   const flipModeEanbled = document
     .getElementById("interact-mode-flip")
@@ -8,7 +8,7 @@ const flipEvent = (event, stackObject) => {
 
   // only run when pancake is clicked and flip mode enabled
   if (selectedPancake && flipModeEanbled) {
-    stackObject.flip(selectedPancake);
+    manager.executeCommand("FLIP", [selectedPancake]);
     renderStackAndHistory(stackObject);
   }
 };
@@ -56,9 +56,11 @@ const drop = (event, stackObject) => {
   renderStackAndHistory(stackObject);
 };
 
-const addFlipListeners = (stackObject) => {
+const addFlipListeners = (manager, stackObject) => {
   const stackDiv = document.getElementById("stack");
-  stackDiv.addEventListener("click", (event) => flipEvent(event, stackObject));
+  stackDiv.addEventListener("click", (event) =>
+    flipEvent(event, manager, stackObject)
+  );
 };
 
 const addDragListeners = (stackObject) => {
