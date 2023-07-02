@@ -7,6 +7,7 @@ import addHistoryListener from "./history-events";
 import { addFlipListeners, addDragListeners } from "./stack-events";
 import PancakeStackInvoker from "./stack-invoker";
 import addChangeStateListeners from "./change-state-controls";
+import addChangeQuantityListeners from "./change-quantity-controls";
 
 const defaultOrder = [6, 5, 3, 2, 4, 1];
 const stack = new SandboxStack(defaultOrder);
@@ -20,6 +21,7 @@ addHistoryListener(PancakeStackManager, stack);
 // add controls listeners
 addViewListeners(stack);
 addInteractModeListeners(stack);
+addChangeQuantityListeners(PancakeStackManager, stack);
 addChangeStateListeners(PancakeStackManager, stack);
 
 // render default stack and history on page load
