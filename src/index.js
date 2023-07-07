@@ -26,3 +26,12 @@ addChangeStateListeners(PancakeStackManager, stack);
 
 // render default stack and history on page load
 renderStackAndHistory(stack);
+
+/* 
+const fullStack = (function () {
+  const init = {
+    stack: new Stack(defaultOrder),
+  };
+  return Object.seal(init);
+})();
+*/
