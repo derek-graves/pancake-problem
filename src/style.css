@@ -191,7 +191,7 @@ body {
   color: var(--primary-color);
 }
 
-.stack-container {
+#stack-container {
   height: 70vh;
   min-height: 500px;
   width: 100%;

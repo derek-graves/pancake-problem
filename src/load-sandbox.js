@@ -30,9 +30,25 @@ const _loadTop = () => {
   return topContainer;
 };
 
-const _loadMiddle = (stackObject) => {
+const _loadControls = (isSandbox) => {};
+
+const _loadMiddle = () => {
   const middleContainer = document.createElement("div");
   middleContainer.classList.add("middle");
+
+  const stackContainer = document.createElement("div");
+  stackContainer.id = "stack-container";
+  const stack = document.createElement("div");
+  stack.id = "stack";
+  stackContainer.appendChild(stack);
+  middleContainer.appendChild(stackContainer);
+
+  const historyContainer = document.createElement("div");
+  historyContainer.id = "history-container";
+  const history = document.createElement("div");
+  history.id = "history";
+  historyContainer.appendChild(history);
+  middleContainer.appendChild(historyContainer);
 
   return middleContainer;
 };
