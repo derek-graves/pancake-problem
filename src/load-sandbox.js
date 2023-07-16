@@ -30,8 +30,6 @@ const _loadTop = () => {
   return topContainer;
 };
 
-const _getControlsDat = () => {};
-
 const _loadControls = (isSandbox) => {
   const controlsData = [];
 
@@ -57,7 +55,40 @@ const _loadControls = (isSandbox) => {
   };
   controlsData.push(changeState);
 
-  const controlsContainer = document.createElement("div");
+  const controlsDiv = document.createElement("div");
+  controlsDiv.classList.add("controls");
+
+  controlsData.forEach((element) => {
+    const groupName = Object.entries(element)[0];
+    const group = Object.entries(element)[0][1];
+    const groupPairs = Object.entries(group);
+
+    const groupDiv = document.createElement("div");
+    groupDiv.classList.add("control-group");
+    groupDiv.id = groupName;
+
+    groupPairs.forEach((pair) => {
+      const button = document.createElement("button");
+      button.classList.add("single-control");
+      button.id = `${groupName}-${pair[0]}`;
+
+      const symbol = document.createElement("div");
+      symbol.classList.add("control-icon", "material-symbols-rounded");
+      symbol.innerText = pair[1];
+      button.appendChild(symbol);
+
+      const label = document.createElement("div");
+      label.classList.add("control-text");
+      label.innerText = pair[0];
+      button.appendChild(label);
+
+      groupDiv.appendChild(button);
+    });
+
+    controlsDiv.appendChild(groupDiv);
+  });
+
+  return controlsDiv;
 };
 
 const _loadMiddle = () => {
@@ -65,6 +96,8 @@ const _loadMiddle = () => {
   middleContainer.classList.add("middle");
 
   // load controls
+  const controlsContainer = _loadControls(true);
+  middleContainer.appendChild(controlsContainer);
 
   const stackContainer = document.createElement("div");
   stackContainer.id = "stack-container";
@@ -90,8 +123,8 @@ const loadSandbox = () => {
   const top = _loadTop();
   allContent.appendChild(top);
 
-  const middle = document.createElement("div");
-  middle.classList.add("middle");
+  const middle = _loadMiddle();
+  allContent.appendChild(middle);
 };
 
 export default loadSandbox;
