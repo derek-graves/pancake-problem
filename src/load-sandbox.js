@@ -30,11 +30,41 @@ const _loadTop = () => {
   return topContainer;
 };
 
-const _loadControls = (isSandbox) => {};
+const _getControlsDat = () => {};
+
+const _loadControls = (isSandbox) => {
+  const controlsData = [];
+
+  const view = {
+    view: { both: "pin", pancakes: "crop_16_9", numbers: "tag" },
+  };
+  controlsData.push(view);
+
+  if (isSandbox) {
+    const interactMode = {
+      "interact-mode": { flip: "360", drag: "drag_indicator" },
+    };
+    controlsData.push(interactMode);
+
+    const changeQuantity = {
+      "change-quantity": { add: "add", remove: "remove" },
+    };
+    controlsData.push(changeQuantity);
+  }
+
+  const changeState = {
+    "change-state": { undo: "undo", redo: "redo", reset: "refresh" },
+  };
+  controlsData.push(changeState);
+
+  const controlsContainer = document.createElement("div");
+};
 
 const _loadMiddle = () => {
   const middleContainer = document.createElement("div");
   middleContainer.classList.add("middle");
+
+  // load controls
 
   const stackContainer = document.createElement("div");
   stackContainer.id = "stack-container";
@@ -58,11 +88,10 @@ const loadSandbox = () => {
 
   // create two main containers
   const top = _loadTop();
+  allContent.appendChild(top);
 
   const middle = document.createElement("div");
   middle.classList.add("middle");
-
-  allContent.appendChild(top);
 };
 
 export default loadSandbox;
