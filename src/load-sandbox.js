@@ -59,7 +59,7 @@ const _loadControls = (isSandbox) => {
   controlsDiv.classList.add("controls");
 
   controlsData.forEach((element) => {
-    const groupName = Object.entries(element)[0];
+    const groupName = Object.entries(element)[0][0];
     const group = Object.entries(element)[0][1];
     const groupPairs = Object.entries(group);
 
@@ -71,6 +71,11 @@ const _loadControls = (isSandbox) => {
       const button = document.createElement("button");
       button.classList.add("single-control");
       button.id = `${groupName}-${pair[0]}`;
+      const enabled =
+        button.id === "view-both" || button.id === "interact-mode-flip";
+      if (enabled) {
+        button.classList.add("single-control-enabled");
+      }
 
       const symbol = document.createElement("div");
       symbol.classList.add("control-icon", "material-symbols-rounded");
@@ -119,7 +124,6 @@ const _loadMiddle = () => {
 const loadSandbox = () => {
   const allContent = document.getElementById("all-content");
 
-  // create two main containers
   const top = _loadTop();
   allContent.appendChild(top);
 
