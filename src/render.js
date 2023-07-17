@@ -22,7 +22,6 @@ const renderStack = (stack) => {
     // make pancake draggable only if drag mode enabled on SandboxStack
     const dragModeDiv = document.getElementById("interact-mode-drag");
     const draggable = dragModeDiv.classList.contains("single-control-enabled");
-    console.log(draggable);
     if (draggable && stack instanceof SandboxStack) {
       newPancake.setAttribute("draggable", true);
     }
