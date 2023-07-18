@@ -1,13 +1,18 @@
 import { renderStackAndHistory } from "./render";
+import { SandboxStack } from "./stack";
 
 const flipEvent = (event, manager, stackObject) => {
   const selectedPancake = event.target.dataset.stackIndex;
-  const flipModeEanbled = document
-    .getElementById("interact-mode-flip")
-    .classList.contains("single-control-enabled");
+  const inSandbox = stackObject instanceof SandboxStack;
+  // a flip is valid on a Stack, or on a SandboxStack when flip mode is enabled
+  const flipIsValid = inSandbox
+    ? document
+        .getElementById("interact-mode-flip")
+        .classList.contains("single-control-enabled")
+    : true;
 
-  // only run when pancake is clicked and flip mode enabled
-  if (selectedPancake && flipModeEanbled) {
+  // only run when pancake is clicked and flips are valid
+  if (selectedPancake && flipIsValid) {
     manager.executeCommand("FLIP", [selectedPancake]);
     renderStackAndHistory(stackObject);
   }
