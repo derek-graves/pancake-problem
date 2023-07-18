@@ -20,10 +20,14 @@ const renderStack = (stack) => {
     newPancake.dataset.value = stackArray[i];
 
     // make pancake draggable only if drag mode enabled on SandboxStack
-    const dragModeDiv = document.getElementById("interact-mode-drag");
-    const draggable = dragModeDiv.classList.contains("single-control-enabled");
-    if (draggable && stack instanceof SandboxStack) {
-      newPancake.setAttribute("draggable", true);
+    if (stack instanceof SandboxStack) {
+      const dragModeDiv = document.getElementById("interact-mode-drag");
+      const draggable = dragModeDiv.classList.contains(
+        "single-control-enabled"
+      );
+      if (draggable) {
+        newPancake.setAttribute("draggable", true);
+      }
     }
 
     stackDOM.append(newPancake);
