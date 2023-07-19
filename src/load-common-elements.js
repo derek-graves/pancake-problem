@@ -53,7 +53,10 @@ const _loadControls = (isSandbox) => {
   controlsData.push(changeState);
 
   const controlsDiv = document.createElement("div");
-  controlsDiv.classList.add("controls");
+  const controlsContainerStyle = isSandbox
+    ? "sandbox-controls"
+    : "puzzle-controls";
+  controlsDiv.classList.add(controlsContainerStyle);
 
   controlsData.forEach((element) => {
     const groupName = Object.entries(element)[0][0];
