@@ -103,7 +103,7 @@ body {
   gap: 24px;
 }
 
-.controls {
+.sandbox-controls {
   height: 100%;
   min-height: 520px;
   max-height: 550px;
@@ -119,6 +119,21 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.puzzle-controls {
+  position: relative;
+
+  border: 3px solid var(--primary-color);
+  border-left: none;
+  border-radius: 0 12px 12px 0;
+
+  padding: 16px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 40px;
 }
 
 .controls-label {
