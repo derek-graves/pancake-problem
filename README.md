@@ -10,15 +10,15 @@ Click on the image above to play in the sandbox!
 
 ### The Pancake Stack
 
-Click on a pancake to flip the stack under that pancake. Each flip adds a new card to the stack history area on the right side of the window.
+Front and center. Click a pancake to flip the stack under that pancake. Each flip adds a new card to the stack history on the right side of the screen.
 
 ### Stack History
 
-A history of all previous flips is shown on the right side of the screen. Each stack history card is numbered with the flip that obtained it in the progression. Click on a history card to return to the stack on the card. Stack history is preserved for all cards prior to and including the clicked card.
+A history of previous flips. Each stack history card is numbered with the flip that obtained it in the progression. Click on a history card to return to the stack on the card. Stack history is preserved for all cards prior to and including the clicked card.
 
 ### Controls
 
-All controls are found on the left side of the screen stacked vertically and grouped by function.
+All controls are found on the left side of the screen, stacked vertically and grouped by function.
 
 #### Stack Visuals
 
