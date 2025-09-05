@@ -45,4 +45,4 @@ Use `add` and `remove` to change the number of pancakes in the stack. These acti
 - [ ] Design pancake graph visual
 - [ ] Make pancake graph clickable
 
-[screenshot]: img/base-game.png
+[screenshot]: img/base-screenshot.png
