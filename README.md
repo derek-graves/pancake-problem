@@ -12,7 +12,7 @@ Click on a pancake to flip the stack under that pancake. Each flip adds a new ca
 
 ### Stack History
 
-Click on a card in the stack history area to return to the stack on the card. Stack history is preserved for all cards prior to and including the clicked card.
+A history of all previous flips is shown on the right side of the screen. Each stack history card is numbered with the flip that obtained it in the progression. Click on a history card to return to the stack on the card. Stack history is preserved for all cards prior to and including the clicked card.
 
 ### Controls
 
