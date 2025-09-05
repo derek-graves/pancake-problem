@@ -4,9 +4,17 @@
 
 ## Features
 
-#### The Pancake Stack
+### The Pancake Stack
 
 Click on a pancake to flip the stack under that pancake. Each flip adds a new card to the stack history area on the right side of the window.
+
+### Stack History
+
+Click on a card in the stack history area to return to the stack on the card. Stack history is preserved for all cards prior to and including the clicked card.
+
+### Controls
+
+All controls are found on the left side of the screen stacked vertically and grouped by function.
 
 #### Stack Visuals
 
@@ -23,10 +31,6 @@ Use `add` and `remove` to change the number of pancakes in the stack. These acti
 #### State Changes
 
 `undo`, `redo`, and `reset` perform their expected actions, allowing the user to correct mistakes or return to a previous stack and stack history.
-
-#### Stack History
-
-Click on a card in the stack history area to return to the stack on the card. Stack history is preserved for all cards prior to and including the clicked card.
 
 ## Roadmap
 
