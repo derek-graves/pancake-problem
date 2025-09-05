@@ -1,6 +1,6 @@
 # flipjack.
 
-[![flipjack screen shot][img/base-game.png]](derek-graves.github.io/pancake-problem/)
+[![flipjack screen shot][screenshot]](derek-graves.github.io/pancake-problem/)
 
 `flipjack` is a prototype of an interactive implementation of the pancake problem, a classic prefix reversal problem in combinatorics. In its current state, it serves as a sandbox and visual tool for understanding and experimenting with the problem. It's built with simple visuals and intuitive mechanics.
 
@@ -42,3 +42,5 @@ Use `add` and `remove` to change the number of pancakes in the stack. These acti
   - [ ] Allow switching between sandbox and puzzle modes
 - [ ] Design pancake graph visual
 - [ ] Make pancake graph clickable
+
+[screenshot]: img/base-game.png
