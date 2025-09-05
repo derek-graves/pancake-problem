@@ -4,6 +4,8 @@
 
 `flipjack` is a prototype of an interactive implementation of the pancake problem, a classic prefix reversal problem in combinatorics. In its current state, the game serves as a sandbox and visual tool for understanding and experimenting with the problem. It's built with simple visuals and intuitive mechanics.
 
+Click on the image above to play in the sandbox!
+
 ## Features
 
 ### The Pancake Stack
