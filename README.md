@@ -8,8 +8,6 @@ Click on the image above to play in the sandbox!
 
 `flipjack`'s sandbox is meant to be used in conjunction with a guided exploration of the pancake problem and associated topics, in the classroom or at home. Try out our exploration [here](https://github.com/derek-graves/pancake-problem/blob/main/pancake-exploration.pdf)!
 
-<!--> Aspirationally, it will also include both a platform for teaching the basics of graph theory and basic combinatorial concepts like permutations and a set of challenging puzzles for users to solve--all through the fun and engaging act of flipping pancake stacks.<-->
-
 ## Features
 
 ### The Pancake Stack
